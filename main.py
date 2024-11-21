@@ -1,8 +1,4 @@
-# stable_marriage.py
-
 def stable_marriage(n, boy_preferences, girl_preferences):
-    # TODO: Implement the Gale-Shapley algorithm
-   def stable_marriage(n, boy_preferences, girl_preferences):
     free_boys = list(range(n))
     girl_engaged_to = [-1] * n
     boy_engaged_to = [-1] * n
@@ -28,3 +24,10 @@ def stable_marriage(n, boy_preferences, girl_preferences):
             else:
                 free_boys.append(boy)
     return [(boy + 1, girl + 1) for boy, girl in enumerate(boy_engaged_to)]
+
+if __name__ == "__main__":
+    n = 3
+    boy_preferences = [[1, 2, 3], [2, 1, 3], [1, 2, 3]]
+    girl_preferences = [[2, 1, 3], [1, 3, 2], [3, 1, 2]]
+    result = stable_marriage(n, boy_preferences, girl_preferences)
+    print("Stable marriages:", result)
